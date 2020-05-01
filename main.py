@@ -1,5 +1,6 @@
 # Henry Rossiter
-
+from ftcs import ftcs
+import matplotlib.pyplot as plt
 
 # alpha
 alpha = 1
@@ -19,4 +20,8 @@ u_x_max = 0
 
 # Time and space step sizes
 dt = 0.1
-dx = 0.1
+dx = 1
+
+ftcs_solution = ftcs(alpha, 10, x_max, f, u_0, u_x_max, dt, dx)
+plt.imshow(ftcs_solution, cmap='hot', interpolation='nearest')
+plt.show()
